@@ -1,0 +1,323 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0;
+    box-sizing: border-box;
+    background-color: none;
+    background-color: #333333;
+    color: white;
+}
+
+:root {
+    --colors: #F2994A;
+
+}
+
+.btn {
+    background-color: #F2994A;
+    border-radius: 35px;
+    height: 50px;
+    color: black;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.inpt {
+    background: transparent;
+    height: 50px;
+    padding: 3px 10px;
+    color: white;
+    border: 1px solid #BDBDBD;
+    border-radius: 10px;
+
+    input[type='submit'] {
+        cursor: pointer;
+    }
+}
+
+.lbl {
+    font-size: 20px;
+    font-weight: 400;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+img {
+    cursor: pointer;
+}
+
+.error{
+    color: rgb(243, 98, 98);
+    font-size: 14px;
+    margin-top: 3px;
+    padding-left: 5px;
+}
+body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login-page {
+    // min-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #BDBDBD;
+    padding: 50px 50px;
+    box-sizing: border-box;
+    flex-direction: column;
+    // margin-bottom: 100px;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+
+        h1 {
+            font-size: 80px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        input {
+            min-width: 525px;
+            font-size: 18px;
+            border-radius: 10px;
+        }
+
+        label {
+            margin-top: 36px;
+            margin-bottom: 2px;
+        }
+
+        button {
+            margin: 50px 0px 20px 0px;
+        }
+
+        a {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 500;
+
+            &:hover {
+                color: rgb(255, 232, 27);
+            }
+        }
+    }
+}
+
+.signup-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #BDBDBD;
+    padding: 50px 50px;
+
+    // margin-bottom: 100px;
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+
+        input {
+            min-width: 250px;
+            font-size: 18px;
+        }
+
+        h1 {
+            font-size: 80px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        label {
+            margin-top: 36px;
+            margin-bottom: 2px;
+        }
+
+        .full-name {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+
+            .first-name,
+            .last-name {
+                flex-grow: 1;
+                flex-shrink: 0;
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+        .verify-passowrd {
+            display: flex;
+            align-items: center;
+            justify-content: space;
+            flex-direction: column;
+            width: 100%;
+            flex-wrap: width100px;
+            // gap: 1rem;
+
+            .only-pass-section {
+                display: flex;
+                flex-direction: row;
+                gap: 1rem;
+                .first-password,
+                .confirm-password {
+                    display: flex;
+                    align-items: left;
+                    flex-direction: column;
+                    justify-content: space-between;
+                }
+            }
+            p{
+                text-align: left;
+                width: 100%;
+            }
+        }
+
+        button {
+            margin-top: 30px;
+        }
+    }
+}
+
+.note-container {
+    width: 100%;
+    min-height: 100vh;
+    // padding: 0px 30px 30px 30px;
+    display: flex;
+    flex-direction: column;
+
+    // justify-content: center;
+    .nav-bar {
+        display: flex;
+        // flex-direction: row;
+        justify-content: space-between;
+        // align-items: end;
+        padding: 0px 30px;
+
+        background-color: #333333;
+        padding-top: 35px;
+        position: fixed;
+        width: 100%;
+    }
+
+
+    h1 {
+        font-size: 40px;
+        font-weight: 700;
+        color: #F2994A;
+    }
+
+    .profile {
+        display: flex;
+        justify-content: row;
+        gap: 10px;
+
+        h3 {
+            font-weight: 400;
+        }
+    }
+
+    .note-lists {
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: left;
+        gap: 40px;
+        flex-wrap: wrap;
+        margin-top: 150px;
+        padding: 0px 70px;
+
+        .add-new-note,
+        .note {
+            border: 2px solid #828282;
+            border-radius: 8px;
+            height: 250px;
+            width: 250px;
+        }
+
+        .add-new-note {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .note {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: column;
+            padding: 24px;
+
+            .date {
+                width: 100%;
+                text-align: right;
+                font-size: 12px;
+                font-weight: 600;
+            }
+        }
+    }
+
+    .addNote {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 125px;
+        padding: 0px 70px;
+        align-items: center;
+        p{
+            margin-bottom: 30px;
+            max-width: 600px;
+            width: 100%;
+            text-align: left;
+        }
+        input,
+        textarea,
+        button {
+            max-width: 600px;
+            width: 100%;
+            // min-width: 500px;
+
+        }
+
+        label {
+            max-width: 600px;
+            text-align: left;
+            width: 100%;
+            margin-bottom: 2px;
+        }
+
+        input[type='submit'] {
+            background-color: #F2C94C;
+            font-size: 24px;
+            color: black;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        textarea {
+            height: 300px;
+            padding: 10px 10px;
+        }
+
+        button {
+            background-color: transparent;
+            font-weight: 500;
+            font-size: 24px;
+        }
+    }
+}
