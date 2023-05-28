@@ -13,7 +13,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     die();
 }
 try {
-    // $email = $SessionEmail;
     $db = new DBconnection();
     $query = "SELECT * FROM `Notes` where user_email= ? ORDER BY `Notes`.`time` DESC;";
     $items = $db->Query($query, [$SessionEmail]);

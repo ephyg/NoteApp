@@ -18,39 +18,34 @@
                     <label for="">First Name</label>
                     <input name="firstName" class="inpt" type="text" value="<?php echo htmlspecialchars($_POST['firstName']) ?? '' ?>">
                     <p class="error">
-                        <?php
-                        if (isset($verify->errors['first name'])) {
-                            echo $firstNameError;
-                        }else{
-                            echo '';
-                        }
-                         ?> </p>
+                        <?php echo $firstNameError; ?> </p>
                 </div>
                 <div class="last-name">
                     <label for="">Last Name</label>
                     <input name="lastName" class="inpt" type="text" value="<?php echo htmlspecialchars($_POST['lastName']) ?? '' ?>">
-                    <p class="error"><?php echo $lastNameError ?? '' ?></p>
+                    <p class="error"><?php echo $lastNameError ?></p>
                 </div>
             </div>
             <label for="">Email</label>
-            <input name="email" class="inpt" type="email">
+            <input name="email" class="inpt" type="email" value="<?php echo htmlspecialchars($_POST['email']) ?? '' ?>">
             <p class="error"><?php echo $emailError ?? '' ?></p>
             <div class="verify-passowrd">
                 <div class="only-pass-section">
                     <div class="first-password">
                         <label for="">Password</label>
-                        <input name="password" class="inpt" type="password">
+                        <input name="password" class="inpt" type="password" value="<?php echo htmlspecialchars($_POST['password']) ?? '' ?>">
                         <!-- <p class="error">Password lengths must be more than 6 digits</p> -->
                     </div>
                     <div class="confirm-password">
                         <label for="">Confirm</label>
-                        <input name="confirm" class="inpt" type="password">
+                        <input name="confirm" class="inpt" type="password" value="<?php echo htmlspecialchars($_POST['confirm']) ?? '' ?>">
                     </div>
                 </div>
-                <p class="error"><?php echo $passwordError ?? '' ?></p>
+                <p class="error"><?php echo $passwordError ?></p>
 
             </div>
             <button type="submit" class="btn">Create Account</button>
+            <a href="/login">do you have an account?</a>
         </form>
     </div>
 </body>

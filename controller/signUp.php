@@ -33,34 +33,35 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $emailError = $verify->getErrors()['email'];
     } else {
         $validateEmailExist = $verify->emailExist($email);
-        $emailError = $verify->getErrors()['email'];
+        $emailError = $verify->errors['email'];
     }
 
 
     // For Password
-    $validateConfirmPassword = $verify->validatePassword($confirm);
-    $validatePassword = $verify->validatePassword($Password);
+    // $validateConfirmPassword = $verify->validatePassword($confirm);
+    $validatePassword = $verify->validatePassword($password);
     $passwordError;
 
     if (isset($validatePassword)) {
-        $passwordError = $verify->getErrors()['password'];
+        $passwordError = $verify->errors['password'];
     } else {
         $verifyMatchPasswod = $verify->matchAnotherPassword($password, $confirm);
-        $passwordError = $verify->getErrors()['password'];
+        $passwordError = $verify->errors['password'];
     }
-    echo ($firstNameError . '<br>' . $lastNameError . '<br>' . $emailError . '<br>' . $passwordError);
-
+    // var_dump("fname".!isset($firstNameError) ."lname". !isset($lastNameError) . "email".!isset($emailError) . "password".!isset($passwordError));
     if (!isset($firstNameError) and !isset($lastNameError) and !isset($emailError) and !isset($passwordError)) {
+        var_dump("signed in");
         $password = password_hash($password, PASSWORD_BCRYPT);
         $query = "INSERT INTO `User` (`firstName`, `lastName`, `email`, `password`) VALUES ('$firstName', '$lastName', '$email', '$password')";
-        $db->Insert($query);
+        $db=new DBconnection();
+        $db->ReadOrInsert($query);
 
         echo "registered";
         $_SESSION['user'] = [
             'email' => $email,
             'firstName' => $firstName
         ];
-        // header('Location: /takeNote');
+        header('Location: /takeNote');
     }
 }
 require('./view/signup.view.php');

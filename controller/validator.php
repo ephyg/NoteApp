@@ -26,7 +26,7 @@ class Validator
     {
         $db = new DBconnection();
         $searchedEmail = $db->SearchEmail($value);
-        if (isset($searchedEmail)) {
+        if (count($searchedEmail) > 0) {
             $this->errors['email'] = 'email exists';
         }
     }
@@ -34,7 +34,7 @@ class Validator
     {
         $db = new DBconnection();
         $searchedEmail = $db->SearchEmail($value);
-        if (!isset($searchedEmail)) {
+        if (count($searchedEmail) <= 0) {
             $this->errors['email'] = 'email not exist';
         }
     }
@@ -43,7 +43,7 @@ class Validator
     // Password Validation
     public function validatePassword($value)
     {
-        if (trim(strlen($value)) < 6) {
+        if (strlen($value) < 6) {
             $this->errors['password'] = 'enter minimum 6 digit password';
             return true;
         }
@@ -88,10 +88,12 @@ class Validator
     public function validateName($value, $nameType)
     {
         if (trim(strlen($value)) < 3) {
-            $this->errors[$nameType] = 'first name must be at least 3 characters';
+            $this->errors[$nameType] = "$nameType must be at least 3 characters";
         } elseif (trim(strlen($value)) > 26) {
-            $this->errors[$nameType] = 'first name must be at most 25 characters';
-        } 
+            $this->errors[$nameType] = "$nameType must be at most 25 characters";
+        } elseif (!ctype_alpha($value)) {
+            $this->errors[$nameType] = "$nameType must contains only alphabets";
+        }
     }
     public function validateLastName($value)
     {
@@ -105,13 +107,21 @@ class Validator
     }
     public function validateTitle($value)
     {
-        if (trim(strlen($value)) > 100) {
+        if (strlen(trim($value)) <= 0) {
+            $this->errors['title'] = 'provide a title for your content';
+            return true;
+        } elseif (trim(strlen($value)) > 100) {
             $this->errors['title'] = 'the text must have maximum length 100';
+            return true;
         }
     }
     public function validateContent($value)
     {
-        if (trim(strlen($value)) > 100) {
+        if (strlen(trim($value)) <= 0) {
+            $this->errors['content'] = 'provide a body minimum 1 character';
+            return true;
+        }
+        if (trim(strlen($value)) > 1000) {
             $this->errors['content'] = 'the text must have maximum length 1000';
         }
     }

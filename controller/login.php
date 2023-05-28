@@ -14,7 +14,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $verify = new Validator();
     // For Email
     $verifyEmail = $verify->validateEmail($Email);
-    $EmailError = $verify->getErrors()['email'];
+    $EmailError;
+    if (isset($verifyEmail)) {
+        $EmailError = $verify->getErrors()['email'];
+    } else {
+        $EmailNotExist = $verify->emailNotExist($Email);
+        $EmailError = $verify->errors['email'];
+    }
+
     // For Password
     $verifyPassword = $verify->validatePassword($Password);
     $matchPass = $verify->matchPassword($Password, $Email);
@@ -28,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         header('Location: /takeNote');
         die();
     }
-    $makeEmpty = $verify->setEmpty();
+    // $makeEmpty = $verify->setEmpty();
 }
 ?>
 <?php require('./view/index.view.php') ?>

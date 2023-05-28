@@ -14,12 +14,12 @@
         <form action="/" method="POST" autocomplete="off">
             <h1>Login</h1>
             <label for="email" class="lbl">Email</label>
-            <input type="email" name="Email" class="inpt">
+            <input type="email" name="Email" class="inpt" value="<?php echo htmlspecialchars($_POST['Email']) ?? '' ?>">
             <p class="error">
                 <?= $EmailError ?>
             </p>
             <label for="password" class="lbl">Password</label>
-            <input type="password" name="Password" class="inpt">
+            <input type="password" name="Password" class="inpt" value="<?php echo htmlspecialchars($_POST['Password']) ?? '' ?>">
             <p class="error"><?= $PasswordError ?></p>
             <button class="btn">Login</button>
             <a href="/signup">Create Account</a>
