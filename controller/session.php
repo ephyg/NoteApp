@@ -1,4 +1,3 @@
 <?php 
-class userSession
-{
-}
+$con = new mysqli();
+?>

@@ -185,6 +185,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 .note-container .nav-bar {
   display: flex;
@@ -286,4 +287,50 @@ body {
   background-color: transparent;
   font-weight: 500;
   font-size: 24px;
+}
+.note-container .edit-delete-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 110px;
+  min-width: 650px;
+  max-width: 700px;
+}
+.note-container .edit-delete-container .title-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+.note-container .edit-delete-container .title-buttons .title-date h1 {
+  font-size: 40px;
+  color: #FFFFFF;
+}
+.note-container .edit-delete-container .title-buttons .title-date h4 {
+  font-size: 16px;
+  color: #BDBDBD;
+}
+.note-container .edit-delete-container .title-buttons .delete-edit {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.note-container .edit-delete-container .title-buttons .delete-edit .edit,
+.note-container .edit-delete-container .title-buttons .delete-edit .delete {
+  width: 100px;
+  border-radius: 25px;
+}
+.note-container .edit-delete-container .title-buttons .delete-edit .edit {
+  background-color: white;
+}
+.note-container .edit-delete-container .title-buttons .delete-edit .delete {
+  background: #EB5757;
+}
+.note-container .edit-delete-container textarea {
+  background-color: #333333;
+  min-height: 500px;
+  padding: 10px 10px;
+  font-size: 20px;
+  font-weight: 400;
+  border: 1px solid gold;
 }/*# sourceMappingURL=style.css.map */

@@ -12,7 +12,7 @@
 <body>
     <div class="signup-page">
         <form action="" method="POST" autocomplete="off">
-            <h1>Sign In</h1>
+            <h1>Sign Up</h1>
             <div class="full-name">
                 <div class="first-name">
                     <label for="">First Name</label>

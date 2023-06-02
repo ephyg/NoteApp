@@ -52,12 +52,13 @@ img {
     cursor: pointer;
 }
 
-.error{
+.error {
     color: rgb(243, 98, 98);
     font-size: 12px;
     margin-top: 3px;
     padding-left: 5px;
 }
+
 body {
     width: 100%;
     min-height: 100vh;
@@ -173,6 +174,7 @@ body {
                 flex-direction: row;
                 gap: 1rem;
                 width: 100%;
+
                 .first-password,
                 .confirm-password {
                     display: flex;
@@ -182,7 +184,8 @@ body {
                     width: 100%;
                 }
             }
-            p{
+
+            p {
                 text-align: left;
                 width: 100%;
             }
@@ -191,7 +194,8 @@ body {
         button {
             margin-top: 30px;
         }
-        a{
+
+        a {
             margin-top: 10px;
             font-size: 18px;
             text-align: center;
@@ -207,6 +211,7 @@ body {
     // padding: 0px 30px 30px 30px;
     display: flex;
     flex-direction: column;
+    align-items: center;
 
     // justify-content: center;
     .nav-bar {
@@ -288,12 +293,14 @@ body {
         margin-top: 125px;
         padding: 0px 70px;
         align-items: center;
-        p{
+
+        p {
             margin-bottom: 30px;
             max-width: 600px;
             width: 100%;
             text-align: left;
         }
+
         input,
         textarea,
         button {
@@ -327,6 +334,63 @@ body {
             background-color: transparent;
             font-weight: 500;
             font-size: 24px;
+        }
+    }
+
+    .edit-delete-container {
+        display: flex;
+        flex-direction: column;
+        margin-top: 110px;
+        min-width: 650px;
+        max-width: 700px;
+
+        .title-buttons {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-bottom: 25px;
+
+            .title-date {
+                h1 {
+                    font-size: 40px;
+                    color: #FFFFFF;
+                }
+
+                h4 {
+                    font-size: 16px;
+                    color: #BDBDBD;
+                }
+            }
+
+            .delete-edit {
+                display: flex;
+                gap: 10px;
+                justify-content: center;
+                align-items: center;
+                .edit,
+                .delete {
+                    width: 100px;
+                    border-radius: 25px;
+                    // margin-right: 10px;
+                }
+
+                .edit {
+                    background-color: white;
+                }
+
+                .delete {
+                    background: #EB5757;
+                }
+            }
+        }
+
+        textarea {
+            background-color: #333333;
+            min-height: 500px;
+            padding: 10px 10px;
+            font-size: 20px;
+            font-weight: 400;
+            border: 1px solid gold;
         }
     }
 }

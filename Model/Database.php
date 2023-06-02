@@ -10,6 +10,7 @@ class DBconnection
             'charset' => 'utf8mb4'
         ];
         $dsn = 'mysql:' . http_build_query($config, '', ';');
+        // $dsn ='mysql:host='localhost';dbname='NoteApp';charset='utf8mb4';
         $username = 'ephrem';
         $password = '1234';
         $this->connection = new PDO($dsn, $username, $password);
